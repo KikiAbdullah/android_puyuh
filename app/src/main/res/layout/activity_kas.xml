@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg"
-    tools:context=".Kandang.KandangActivity">
+    tools:context=".Kas.KasActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/kandangRecyclerView"
+        android:id="@+id/kasRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

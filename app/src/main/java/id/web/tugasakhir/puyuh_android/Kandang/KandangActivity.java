@@ -1,12 +1,11 @@
-package id.web.tugasakhir.puyuh_android;
+package id.web.tugasakhir.puyuh_android.Kandang;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import id.web.tugasakhir.puyuh_android.Adapter.KandangAdapter;
+
+import id.web.tugasakhir.puyuh_android.R;
 import id.web.tugasakhir.puyuh_android.RestAPI.ApiClient;
-import id.web.tugasakhir.puyuh_android.Service.KandangService;
-import id.web.tugasakhir.puyuh_android.model.KandangData;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -52,9 +51,9 @@ public class KandangActivity extends AppCompatActivity {
     }
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
-    private void generateDataList(List<KandangData> kandangDataList){
+    private void generateDataList(List<KandangData> kandangDataList) {
         recyclerView = findViewById(R.id.kandangRecyclerView);
-        adapter = new KandangAdapter(kandangDataList,this);
+        adapter = new KandangAdapter(kandangDataList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

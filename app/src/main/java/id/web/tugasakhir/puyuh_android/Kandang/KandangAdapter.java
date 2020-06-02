@@ -1,4 +1,4 @@
-package id.web.tugasakhir.puyuh_android.Adapter;
+package id.web.tugasakhir.puyuh_android.Kandang;
 
         import android.content.Context;
         import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ package id.web.tugasakhir.puyuh_android.Adapter;
 
         import androidx.recyclerview.widget.RecyclerView;
         import id.web.tugasakhir.puyuh_android.R;
-        import id.web.tugasakhir.puyuh_android.model.KandangData;
 
 public class KandangAdapter extends RecyclerView.Adapter<KandangAdapter.KandangViewHolder> {
     private List<KandangData> dataList;
@@ -35,7 +34,7 @@ public class KandangAdapter extends RecyclerView.Adapter<KandangAdapter.KandangV
     @Override
     public KandangViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.custom_row, parent, false);
+        View view = layoutInflater.inflate(R.layout.kandang_row, parent, false);
         return new KandangViewHolder(view);
     }
 

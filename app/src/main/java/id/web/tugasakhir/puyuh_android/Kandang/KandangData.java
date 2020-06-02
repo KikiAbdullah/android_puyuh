@@ -1,4 +1,4 @@
-package id.web.tugasakhir.puyuh_android.model;
+package id.web.tugasakhir.puyuh_android.Kandang;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -12,19 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LaporanActivity"></activity>
+        <activity android:name=".LaporanActivity"/>
         <activity android:name=".PendapatanActivity" />
         <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".KandangActivity"
-            android:label=".MainActivity"
+            android:name=".Kandang.KandangActivity"
+            android:label=".KandangActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Keuangan.KeuanganActivity"
+            android:label=".KeuanganActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="Kas.KasActivity"
+            android:label=".KasActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Gaji.GajiActivity"/>
     </application>
 
 </manifest>
