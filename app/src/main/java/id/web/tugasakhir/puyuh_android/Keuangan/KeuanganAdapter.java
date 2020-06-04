@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import id.web.tugasakhir.puyuh_android.Keuangan.KeuanganData;
 import id.web.tugasakhir.puyuh_android.R;
 
 public class KeuanganAdapter extends RecyclerView.Adapter<KeuanganAdapter.KeuanganViewHolder> {

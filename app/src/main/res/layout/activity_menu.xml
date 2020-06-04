@@ -41,44 +41,6 @@
         <!-- Row 1 -->
 
         <!-- Column 1 -->
-        <!--        <Button-->
-        <!--            android:id="@+id/btn_keuangan"-->
-        <!--        android:layout_width="0dp"-->
-        <!--        android:layout_height="0dp"-->
-        <!--        android:layout_rowWeight="1"-->
-        <!--        android:layout_columnWeight="1"-->
-        <!--        android:layout_marginLeft="16dp"-->
-        <!--        android:layout_marginRight="16dp"-->
-        <!--        android:layout_marginBottom="16dp"-->
-        <!--            android:text="Keuangan" />-->
-
-
-        <!-- Column 2 -->
-        <Button
-            android:id="@+id/btn_kas"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Kas" />
-
-        <!-- Row 2 -->
-
-        <!-- Column 1 -->
-        <Button
-            android:id="@+id/btn_data"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Data" />
-        <!-- Column 2 -->
         <Button
             android:id="@+id/btn_pendapatan"
             android:layout_width="0dp"
@@ -90,9 +52,8 @@
             android:layout_marginBottom="16dp"
             android:text="Pendapatan" />
 
-        <!-- Row 2 -->
 
-        <!-- Column 1 -->
+        <!-- Column 2 -->
         <Button
             android:id="@+id/btn_laporan"
             android:layout_width="0dp"
@@ -103,6 +64,45 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:text="Laporan" />
+
+        <!-- Row 2 -->
+
+        <!-- Column 1 -->
+        <Button
+            android:id="@+id/btn_keuangan"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Keuangan" />
+        <!-- Column 2 -->
+        <Button
+            android:id="@+id/btn_aboutUs"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="About Us" />
+
+        <!-- Row 2 -->
+
+        <!-- Column 1 -->
+<!--        <Button-->
+<!--            android:id="@+id/btn_laporan"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_rowWeight="1"-->
+<!--            android:layout_columnWeight="1"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:text="Laporan" />-->
         <!-- Column 2 -->
         <!--        <android.support.v7.widget.CardView-->
         <!--            android:layout_width="0dp"-->

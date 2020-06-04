@@ -1,20 +1,20 @@
 package id.web.tugasakhir.puyuh_android.Keuangan;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 import id.web.tugasakhir.puyuh_android.R;
 import id.web.tugasakhir.puyuh_android.RestAPI.ApiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.widget.Toast;
-
-import java.util.List;
 
 
 public class KeuanganActivity extends AppCompatActivity {
@@ -32,8 +32,8 @@ public class KeuanganActivity extends AppCompatActivity {
         progressDoalog.show();
 
         /*Create handle for the RetrofitInstance interface*/
-        KeuanganService KeuanganService = ApiClient.getRetrofitInstance().create(id.web.tugasakhir.puyuh_android.Keuangan.KeuanganService.class);
-        Call<List<KeuanganData>> call = KeuanganService.getAllKeuangan();
+        KeuanganService keuanganService = ApiClient.getRetrofitInstance().create(KeuanganService.class);
+        Call<List<KeuanganData>> call = keuanganService.getAllKeuangan();
         call.enqueue(new Callback<List<KeuanganData>>() {
             @Override
             public void onResponse(Call<List<KeuanganData>> call, Response<List<KeuanganData>> response) {
@@ -51,9 +51,9 @@ public class KeuanganActivity extends AppCompatActivity {
     }
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
-    private void generateDataList(List<KeuanganData> KeuanganDataList) {
+    private void generateDataList(List<KeuanganData> keuanganDataList) {
         recyclerView = findViewById(R.id.keuanganRecyclerView);
-        adapter = new KeuanganAdapter(KeuanganDataList, this);
+        adapter = new KeuanganAdapter(keuanganDataList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
