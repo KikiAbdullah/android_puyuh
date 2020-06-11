@@ -7,26 +7,34 @@
     android:background="@drawable/gradient_bg"
     tools:context=".Pendapatan.PendapatanActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:text="Pendapatan"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btn_addPendapatan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_addPendapatan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
         android:text="Add Pendapatan"
         app:layout_constraintBottom_toTopOf="@+id/pendapatanRecyclerView"
-        app:layout_constraintEnd_toStartOf="@+id/pendapatanRecyclerView"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pendapatanRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="@id/btn_addPendapatan"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addPendapatan" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

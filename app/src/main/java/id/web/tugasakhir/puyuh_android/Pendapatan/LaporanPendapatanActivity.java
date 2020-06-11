@@ -20,10 +20,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LaporanPendapatanActivity extends AppCompatActivity {
-    private String tanggal;
     private EditText editTelur, editHarga;
     private TextView textTotal, textDate;
     private Button btnSubmitPendapatan;
+    private String nama;
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     Date date = new Date();
 
@@ -55,14 +55,18 @@ public class LaporanPendapatanActivity extends AppCompatActivity {
         String totalHarga = Integer.parseInt(jmlTelur) * Integer.parseInt(jmlHarga) + "";
         textTotal.setText(totalHarga);
 
-        String idUser = 1 + "";
+        String idUser = "1";
+        String nama = "Jual Telur";
+        String satuan = "kg";
 
         PendapatanService pendapatanService = ApiClient.getRetrofitInstance().create(PendapatanService.class);
         Call<PendapatanData> call = pendapatanService.addPendapatan(
                 idUser,
                 tanggal,
-                jmlTelur,
+                nama,
                 jmlHarga,
+                jmlTelur,
+                satuan,
                 totalHarga
         );
         call.enqueue(new Callback<PendapatanData>() {

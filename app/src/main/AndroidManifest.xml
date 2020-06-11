@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".LaporanHarian.LaporanActivity"/>
+        <activity android:name=".LaporanHarian.ListLaporanActivity"/>
         <activity android:name=".Pendapatan.LaporanPendapatanActivity"/>
         <activity android:name=".Pendapatan.PendapatanActivity" />
         <activity android:name=".MenuActivity">
@@ -22,21 +23,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Kandang.KandangActivity"
-            android:label=".KandangActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Keuangan.KeuanganActivity"
             android:label=".PendapatanActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name="Kas.KasActivity"
-            android:label=".KasActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".Gaji.GajiActivity"/>
     </application>
 
 </manifest>

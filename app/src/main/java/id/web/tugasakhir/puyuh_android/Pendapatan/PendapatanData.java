@@ -16,7 +16,7 @@ public class PendapatanData {
 
     @SerializedName("tanggal")
     @Expose
-    private Date tanggal;
+    private String tanggal;
 
     @SerializedName("nama")
     @Expose
@@ -38,7 +38,7 @@ public class PendapatanData {
     @Expose
     private Integer totalPendapatan;
 
-    public PendapatanData(Integer idPendapatan, Integer idUser, Date tanggal, String namaPendapatan, Integer hargaPendapatan, Integer jumlahPendapatan, String satuanPendapatan, Integer totalPendapatan) {
+    public PendapatanData(Integer idPendapatan, Integer idUser, String tanggal, String namaPendapatan, Integer hargaPendapatan, Integer jumlahPendapatan, String satuanPendapatan, Integer totalPendapatan) {
         this.idPendapatan = idPendapatan;
         this.idUser = idUser;
         this.tanggal = tanggal;
@@ -65,11 +65,11 @@ public class PendapatanData {
         this.idUser = idUser;
     }
 
-    public Date getTanggal() {
+    public String getTanggal() {
         return tanggal;
     }
 
-    public void setTanggal(Date tanggal) {
+    public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
     }
 

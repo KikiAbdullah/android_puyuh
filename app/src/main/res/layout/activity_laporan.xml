@@ -1,60 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/gradient_bg"
-    tools:context=".LaporanActivity">
+    tools:context=".LaporanHarian.ListLaporanActivity">
 
     <TextView
-        android:id="@+id/textTanggalLaporan"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:text="Tanggal Laporan" />
-
-    <TextView
-        android:id="@+id/textTitleLaporan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="Laporan Harian" />
-
-    <EditText
-        android:id="@+id/edit_kandang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Nomor Kandang" />
-
-    <EditText
-        android:id="@+id/edit_laporanTelur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:hint="Masukan Jumlah Telur"/>
-
-    <EditText
-        android:id="@+id/edit_laporanKematian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:hint="Masukan Jumlah Kematian"/>
+        android:layout_marginBottom="21dp"
+        android:text="Laporan"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btn_addLaporan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_submitLaporan"
+        android:id="@+id/btn_addLaporan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:text="Submit" />
+        android:layout_marginBottom="21dp"
+        android:text="Add Laporan"
+        app:layout_constraintBottom_toTopOf="@+id/pendapatanRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/laporanRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addLaporan" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

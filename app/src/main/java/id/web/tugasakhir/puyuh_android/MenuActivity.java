@@ -13,7 +13,7 @@ import java.util.Date;
 
 import id.web.tugasakhir.puyuh_android.Keuangan.KeuanganActivity;
 import id.web.tugasakhir.puyuh_android.Pendapatan.LaporanPendapatanActivity;
-import id.web.tugasakhir.puyuh_android.LaporanHarian.LaporanActivity;
+import id.web.tugasakhir.puyuh_android.LaporanHarian.ListLaporanActivity;
 import id.web.tugasakhir.puyuh_android.Pendapatan.PendapatanActivity;
 
 
@@ -36,7 +36,7 @@ public class MenuActivity extends AppCompatActivity {
         btnLaporan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toLaporan = new Intent(MenuActivity.this, LaporanActivity.class);
+                Intent toLaporan = new Intent(MenuActivity.this, ListLaporanActivity.class);
                 startActivity(toLaporan);
             }
         });

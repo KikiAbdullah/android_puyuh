@@ -18,8 +18,10 @@ public interface PendapatanService {
     Call<PendapatanData> addPendapatan(
             @Field("id_user") String idUser,
             @Field("tanggal") String tanggal,
-            @Field("jumlah") String jumlah,
-            @Field("harga") String harga,
-            @Field("total") String total
+            @Field("nama") String nama,
+            @Field("harga") String jmlHarga,
+            @Field("jumlah") String jmlTelur,
+            @Field("satuan") String satuan,
+            @Field("total") String totalHarga
     );
 }

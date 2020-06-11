@@ -13,10 +13,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import id.web.tugasakhir.puyuh_android.LaporanHarian.LaporanData;
 import id.web.tugasakhir.puyuh_android.R;
 import id.web.tugasakhir.puyuh_android.RestAPI.ApiClient;
-import id.web.tugasakhir.puyuh_android.Service.LaporanService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,7 +30,7 @@ public class LaporanActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_laporan);
+    setContentView(R.layout.activity_add_laporan);
     Date today = new Date();
     editKandang = findViewById(R.id.edit_kandang);
     editTelur = findViewById(R.id.edit_laporanTelur);
