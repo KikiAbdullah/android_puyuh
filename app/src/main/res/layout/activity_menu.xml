@@ -21,11 +21,6 @@
         android:layout_height="wrap_content"
         android:text="Hari Ini" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/keuanganRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:itemCount="4" />
 
     <GridLayout
         android:id="@+id/mainGrid"
@@ -47,9 +42,9 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="70dp"
             android:text="Pendapatan" />
 
 
@@ -60,10 +55,10 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Laporan" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/ic_btn_laporan" />
 
         <!-- Row 2 -->
 
@@ -74,10 +69,10 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Keuangan" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="70dp"
+            android:text="Keuangan"/>
         <!-- Column 2 -->
         <Button
             android:id="@+id/btn_aboutUs"
@@ -85,9 +80,9 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="70dp"
             android:text="About Us" />
 
         <!-- Row 2 -->

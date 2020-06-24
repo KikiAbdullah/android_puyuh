@@ -54,11 +54,11 @@ public class LaporanActivity extends AppCompatActivity {
     String jmlKematian = editKematian.getText().toString().trim();
     String idUser = 1 + "";
 
-    System.out.println(tanggal);
-    System.out.println(noKandang);
-    System.out.println(jmlTelur);
-    System.out.println(jmlKematian);
-    System.out.println(idUser);
+//    System.out.println(tanggal);
+//    System.out.println(noKandang);
+//    System.out.println(jmlTelur);
+//    System.out.println(jmlKematian);
+//    System.out.println(idUser);
 
     LaporanService laporanService = ApiClient.getRetrofitInstance().create(LaporanService.class);
     Call<LaporanData> callLaporan = laporanService.addLaporan(
