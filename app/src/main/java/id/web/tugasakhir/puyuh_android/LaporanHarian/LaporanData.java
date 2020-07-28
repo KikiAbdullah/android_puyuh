@@ -12,9 +12,9 @@ public class LaporanData {
     @Expose
     private Integer idUserLaporan;
 
-    @SerializedName("id_kandang")
+    @SerializedName("no_kandang")
     @Expose
-    private Integer idKandangLaporan;
+    private Integer noKandangLaporan;
 
     @SerializedName("tanggal")
     @Expose
@@ -28,10 +28,10 @@ public class LaporanData {
     @Expose
     private Integer jumlahKematian;
 
-    public LaporanData(Integer idLaporan, Integer idUserLaporan, Integer idKandangLaporan, String tanggalLaporan, Integer jumlahTelur, Integer jumlahKematian) {
+    public LaporanData(Integer idLaporan, Integer idUserLaporan, Integer noKandangLaporan, String tanggalLaporan, Integer jumlahTelur, Integer jumlahKematian) {
         this.idLaporan = idLaporan;
         this.idUserLaporan = idUserLaporan;
-        this.idKandangLaporan = idKandangLaporan;
+        this.noKandangLaporan = noKandangLaporan;
         this.tanggalLaporan = tanggalLaporan;
         this.jumlahTelur = jumlahTelur;
         this.jumlahKematian = jumlahKematian;
@@ -53,12 +53,12 @@ public class LaporanData {
         this.idUserLaporan = idUserLaporan;
     }
 
-    public Integer getIdKandangLaporan() {
-        return idKandangLaporan;
+    public Integer getNoKandangLaporan() {
+        return noKandangLaporan;
     }
 
-    public void setIdKandangLaporan(Integer idKandangLaporan) {
-        this.idKandangLaporan = idKandangLaporan;
+    public void setNoKandangLaporan(Integer noKandangLaporan) {
+        this.noKandangLaporan = noKandangLaporan;
     }
 
     public String getTanggalLaporan() {

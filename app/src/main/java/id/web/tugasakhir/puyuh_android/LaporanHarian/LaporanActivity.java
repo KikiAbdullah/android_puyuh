@@ -1,6 +1,10 @@
 package id.web.tugasakhir.puyuh_android.LaporanHarian;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,8 +17,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import id.web.tugasakhir.puyuh_android.Login.JWTTokenService;
+import id.web.tugasakhir.puyuh_android.Login.TokenManager;
+import id.web.tugasakhir.puyuh_android.MenuActivity;
 import id.web.tugasakhir.puyuh_android.R;
 import id.web.tugasakhir.puyuh_android.RestAPI.ApiClient;
+import id.web.tugasakhir.puyuh_android.helper.ServiceGenerator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,9 +30,11 @@ import retrofit2.Response;
 public class LaporanActivity extends AppCompatActivity {
   private EditText editKandang, editTelur, editKematian;
   private TextView textDate;
-  private Button btnSubmitLaporan;
+  private Button btnSubmitLaporan, btnBackList;
   DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
   Date date = new Date();
+  private TokenManager tokenManager;
+  private Context context;
 
 
   @Override
@@ -38,11 +48,23 @@ public class LaporanActivity extends AppCompatActivity {
     textDate = findViewById(R.id.textTanggalLaporan);
     textDate.setText(today + "");
     btnSubmitLaporan = findViewById(R.id.btn_submitLaporan);
+    btnBackList = findViewById(R.id.btnBack_addLaporan);
+    context = getApplicationContext();
+
+    tokenManager = new TokenManager(getApplicationContext());
+    System.out.println("ini token laporan = " + tokenManager.getKeyJwtToken());
 
     btnSubmitLaporan.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         sendData();
+      }
+    });
+    btnBackList.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent toList = new Intent(LaporanActivity.this, ListLaporanActivity.class);
+        startActivity(toList);
       }
     });
   }
@@ -54,13 +76,9 @@ public class LaporanActivity extends AppCompatActivity {
     String jmlKematian = editKematian.getText().toString().trim();
     String idUser = 1 + "";
 
-//    System.out.println(tanggal);
-//    System.out.println(noKandang);
-//    System.out.println(jmlTelur);
-//    System.out.println(jmlKematian);
-//    System.out.println(idUser);
-
-    LaporanService laporanService = ApiClient.getRetrofitInstance().create(LaporanService.class);
+    SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
+    Toast.makeText(context, preference.getString("token",null), Toast.LENGTH_SHORT).show();
+    LaporanService laporanService = ServiceGenerator.createService(LaporanService.class, "Bearer "+preference.getString("token",null));
     Call<LaporanData> callLaporan = laporanService.addLaporan(
             idUser,
             noKandang,
@@ -72,13 +90,15 @@ public class LaporanActivity extends AppCompatActivity {
       @Override
       public void onResponse(Call<LaporanData> call, Response<LaporanData> response) {
         if (response.isSuccessful()) {
-          Toast.makeText(LaporanActivity.this, "berhasil ditambahkan", Toast.LENGTH_SHORT).show();
+          Toast.makeText(LaporanActivity.this, "Gagal ditambahkan", Toast.LENGTH_SHORT).show();
         }
       }
 
       @Override
       public void onFailure(Call<LaporanData> call, Throwable t) {
-        Toast.makeText(LaporanActivity.this, "Gagal ditambahkan", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LaporanActivity.this, "Data Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
+        Intent toList = new Intent(LaporanActivity.this, ListLaporanActivity.class);
+        startActivity(toList);
       }
     });
   }

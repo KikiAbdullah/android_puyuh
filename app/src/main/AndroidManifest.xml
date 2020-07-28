@@ -3,6 +3,7 @@
     package="id.web.tugasakhir.puyuh_android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LaporanHarian.LaporanActivity"/>
-        <activity android:name=".LaporanHarian.ListLaporanActivity"/>
-        <activity android:name=".Pendapatan.LaporanPendapatanActivity"/>
+        <activity android:name=".LaporanHarian.LaporanActivity" />
+        <activity android:name=".LaporanHarian.ListLaporanActivity" />
+        <activity android:name=".Pendapatan.LaporanPendapatanActivity" />
         <activity android:name=".Pendapatan.PendapatanActivity" />
-        <activity android:name=".MenuActivity">
+        <activity android:name=".AboutUs.AboutActivity" />
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,9 +27,8 @@
         </activity>
         <activity
             android:name=".Keuangan.KeuanganActivity"
-            android:label=".PendapatanActivity"
+            android:label=".KeuanganActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
     </application>
 
 </manifest>

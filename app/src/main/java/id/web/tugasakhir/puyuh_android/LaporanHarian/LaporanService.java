@@ -17,7 +17,7 @@ public interface LaporanService {
   @POST("laporanHarian")
   Call<LaporanData> addLaporan(
           @Field("id_user") String idUser,
-          @Field("id_kandang") String noKandang,
+          @Field("no_kandang") String noKandang,
           @Field("tanggal") String tanggal,
           @Field("jumlah_telur") String jmlTelur,
           @Field("jumlah_kematian") String jmlKematian

@@ -45,9 +45,9 @@ public class LaporanAdapter extends RecyclerView.Adapter<LaporanAdapter.LaporanV
     @Override
     public void onBindViewHolder(LaporanViewHolder holder, int position) {
         holder.mTanggalLaporan.setText("Tanggal : " +dataList.get(position).getTanggalLaporan());
-        holder.mIdKandang.setText("No Kandang : "+dataList.get(position).getIdKandangLaporan());
-        holder.mJumlahTelur.setText("Jumlah Telur : "+dataList.get(position).getJumlahTelur());
-        holder.mJumlahKematian.setText("jumlah kematian : "+dataList.get(position).getJumlahKematian());
+        holder.mIdKandang.setText("No Kandang : "+dataList.get(position).getNoKandangLaporan());
+        holder.mJumlahTelur.setText("Jumlah Telur : "+dataList.get(position).getJumlahTelur()+" Butir");
+        holder.mJumlahKematian.setText("jumlah kematian : "+dataList.get(position).getJumlahKematian()+" Ekor");
 
     }
 

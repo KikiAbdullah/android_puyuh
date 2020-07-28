@@ -16,7 +16,7 @@ public class KeuanganData {
 
     @SerializedName("tanggal_kas")
     @Expose
-    private Date tanggalKas;
+    private String tanggalKas;
 
     @SerializedName("jumlah_gaji")
     @Expose
@@ -24,9 +24,9 @@ public class KeuanganData {
 
     @SerializedName("tanggal_gaji")
     @Expose
-    private Date tanggalGaji;
+    private String tanggalGaji;
 
-    public KeuanganData(Integer idKeuangan, Integer totalKas, Date tanggalKas, Integer jumlahGaji, Date tanggalGaji) {
+    public KeuanganData(Integer idKeuangan, Integer totalKas, String tanggalKas, Integer jumlahGaji, String tanggalGaji) {
         this.idKeuangan = idKeuangan;
         this.totalKas = totalKas;
         this.tanggalKas = tanggalKas;
@@ -50,11 +50,11 @@ public class KeuanganData {
         this.totalKas = totalKas;
     }
 
-    public Date getTanggalKas() {
+    public String getTanggalKas() {
         return tanggalKas;
     }
 
-    public void setTanggalKas(Date tanggalKas) {
+    public void setTanggalKas(String tanggalKas) {
         this.tanggalKas = tanggalKas;
     }
 
@@ -66,11 +66,11 @@ public class KeuanganData {
         this.jumlahGaji = jumlahGaji;
     }
 
-    public Date getTanggalGaji() {
+    public String getTanggalGaji() {
         return tanggalGaji;
     }
 
-    public void setTanggalGaji(Date tanggalGaji) {
+    public void setTanggalGaji(String tanggalGaji) {
         this.tanggalGaji = tanggalGaji;
     }
 }

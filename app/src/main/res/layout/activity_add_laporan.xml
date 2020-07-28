@@ -8,25 +8,29 @@
     android:background="@drawable/gradient_bg"
     tools:context=".LaporanHarian.LaporanActivity">
 
-    <TextView
-        android:id="@+id/textTanggalLaporan"
+    <Button
+        android:id="@+id/btnBack_addLaporan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/colorText"
-        android:text="Tanggal Laporan" />
+        android:text="Kembali" />
 
     <TextView
         android:id="@+id/textTitleLaporan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
         android:textColor="@color/colorText"
         android:text="Laporan Harian" />
+
+    <TextView
+        android:id="@+id/textTanggalLaporan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Tanggal Laporan"
+        android:textColor="@color/colorText" />
 
     <EditText
         android:id="@+id/edit_kandang"

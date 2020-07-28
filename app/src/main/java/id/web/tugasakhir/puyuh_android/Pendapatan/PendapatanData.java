@@ -18,10 +18,6 @@ public class PendapatanData {
     @Expose
     private String tanggal;
 
-    @SerializedName("nama")
-    @Expose
-    private String namaPendapatan;
-
     @SerializedName("harga")
     @Expose
     private Integer hargaPendapatan;
@@ -38,11 +34,10 @@ public class PendapatanData {
     @Expose
     private Integer totalPendapatan;
 
-    public PendapatanData(Integer idPendapatan, Integer idUser, String tanggal, String namaPendapatan, Integer hargaPendapatan, Integer jumlahPendapatan, String satuanPendapatan, Integer totalPendapatan) {
+    public PendapatanData(Integer idPendapatan, Integer idUser, String tanggal,  Integer hargaPendapatan, Integer jumlahPendapatan, String satuanPendapatan, Integer totalPendapatan) {
         this.idPendapatan = idPendapatan;
         this.idUser = idUser;
         this.tanggal = tanggal;
-        this.namaPendapatan = namaPendapatan;
         this.hargaPendapatan = hargaPendapatan;
         this.jumlahPendapatan = jumlahPendapatan;
         this.satuanPendapatan = satuanPendapatan;
@@ -71,14 +66,6 @@ public class PendapatanData {
 
     public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
-    }
-
-    public String getNamaPendapatan() {
-        return namaPendapatan;
-    }
-
-    public void setNamaPendapatan(String namaPendapatan) {
-        this.namaPendapatan = namaPendapatan;
     }
 
     public Integer getHargaPendapatan() {

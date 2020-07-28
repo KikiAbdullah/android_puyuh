@@ -41,7 +41,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Tgl Kas"
+            android:hint=""
             android:textSize="15sp"
             android:textStyle="bold" />
 

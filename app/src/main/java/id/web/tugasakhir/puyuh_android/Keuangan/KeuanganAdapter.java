@@ -43,10 +43,9 @@ public class KeuanganAdapter extends RecyclerView.Adapter<KeuanganAdapter.Keuang
 
     @Override
     public void onBindViewHolder(KeuanganViewHolder holder, int position) {
-        holder.mTanggalKas.setText("Tanggal : " + dataList.get(position).getTanggalKas());
-        holder.mTextKas.setText("Total Kas= "+ dataList.get(position).getTotalKas());
+        holder.mTextKas.setText("Kas : Rp. "+ dataList.get(position).getTotalKas());
         holder.mTanggalGaji.setText("Tanggal : " + dataList.get(position).getTanggalGaji());
-        holder.mTextGaji.setText("Total Gaji= "+ dataList.get(position).getJumlahGaji() );
+        holder.mTextGaji.setText("Gaji : Rp. "+ dataList.get(position).getJumlahGaji() );
 
     }
 

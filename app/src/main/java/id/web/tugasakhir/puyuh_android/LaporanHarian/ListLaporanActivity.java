@@ -1,8 +1,11 @@
 package id.web.tugasakhir.puyuh_android.LaporanHarian;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,8 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import id.web.tugasakhir.puyuh_android.MenuActivity;
 import id.web.tugasakhir.puyuh_android.R;
 import id.web.tugasakhir.puyuh_android.RestAPI.ApiClient;
+import id.web.tugasakhir.puyuh_android.helper.ServiceGenerator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,13 +28,15 @@ public class ListLaporanActivity extends AppCompatActivity {
 
     private LaporanAdapter adapter;
     private RecyclerView recyclerView;
-    Button btnAdd;
+    Button btnAdd, btnBackMenu;
     ProgressDialog progressDoalog;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laporan);
+        context = getApplicationContext();
 
         //toPendapatan
         btnAdd = findViewById(R.id.btn_addLaporan);
@@ -41,12 +48,23 @@ public class ListLaporanActivity extends AppCompatActivity {
             }
         });
 
+        btnBackMenu = findViewById(R.id.btnBack_listLaporan);
+        btnBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toList = new Intent(ListLaporanActivity.this, MenuActivity.class);
+                startActivity(toList);
+            }
+        });
+
         progressDoalog = new ProgressDialog(ListLaporanActivity.this);
         progressDoalog.setMessage("Loading....");
         progressDoalog.show();
 
         /*Create handle for the RetrofitInstance interface*/
-        LaporanService pendapatanService = ApiClient.getRetrofitInstance().create(LaporanService.class);
+        SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
+        Toast.makeText(context, preference.getString("token",null), Toast.LENGTH_SHORT).show();
+        LaporanService pendapatanService = ServiceGenerator.createService(LaporanService.class, "Bearer "+preference.getString("token",null));
         retrofit2.Call<List<LaporanData>> call = pendapatanService.getAllLaporan();
         call.enqueue(new Callback<List<LaporanData>>() {
             @Override
@@ -65,9 +83,9 @@ public class ListLaporanActivity extends AppCompatActivity {
     }
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
-    private void generateDataList(List<LaporanData> pendapatanDataList) {
+    private void generateDataList(List<LaporanData> laporanDataList) {
         recyclerView = findViewById(R.id.laporanRecyclerView);
-        adapter = new LaporanAdapter(pendapatanDataList, this);
+        adapter = new LaporanAdapter(laporanDataList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

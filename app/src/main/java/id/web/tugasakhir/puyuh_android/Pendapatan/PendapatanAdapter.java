@@ -22,12 +22,11 @@ public class PendapatanAdapter extends RecyclerView.Adapter<PendapatanAdapter.Pe
     }
 
     class PendapatanViewHolder extends RecyclerView.ViewHolder{
-        public TextView mTanggalPendapatan, mNamaPendapatan, mHargaPendapatan, mJumlahPendapatan, mTotalPendapatan;
+        public TextView mTanggalPendapatan, mHargaPendapatan, mJumlahPendapatan, mTotalPendapatan;
 
         PendapatanViewHolder(View itemView) {
             super(itemView);
             mTanggalPendapatan = itemView.findViewById(R.id.textTanggalPendapatan);
-            mNamaPendapatan = itemView.findViewById(R.id.textNamaPendapatan);
             mHargaPendapatan = itemView.findViewById(R.id.textHargaPendapatan);
             mJumlahPendapatan = itemView.findViewById(R.id.textJumlahPendapatan);
             mTotalPendapatan = itemView.findViewById(R.id.textTotalPendapatan);
@@ -44,10 +43,9 @@ public class PendapatanAdapter extends RecyclerView.Adapter<PendapatanAdapter.Pe
     @Override
     public void onBindViewHolder(PendapatanViewHolder holder, int position) {
         holder.mTanggalPendapatan.setText("Tanggal : " + dataList.get(position).getTanggal());
-        holder.mNamaPendapatan.setText("Nama : "+dataList.get(position).getNamaPendapatan());
-        holder.mHargaPendapatan.setText("Harga : "+dataList.get(position).getHargaPendapatan());
+        holder.mHargaPendapatan.setText("Harga : Rp. "+dataList.get(position).getHargaPendapatan());
         holder.mJumlahPendapatan.setText("Jumlah : "+dataList.get(position).getJumlahPendapatan() + " " +  dataList.get(position).getSatuanPendapatan());
-        holder.mTotalPendapatan.setText("Total : "+dataList.get(position).getTotalPendapatan());
+        holder.mTotalPendapatan.setText("Total : Rp. "+dataList.get(position).getTotalPendapatan());
 
     }
 
